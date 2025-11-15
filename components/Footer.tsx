@@ -7,8 +7,8 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ name }) => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-slate-900 text-center py-8 mt-12 md:mt-20 border-t border-slate-800">
-      <p className="text-slate-500">
+    <footer className="bg-slate-100 dark:bg-slate-900 text-center py-8 mt-12 md:mt-20 border-t border-slate-200 dark:border-slate-800">
+      <p className="text-slate-600 dark:text-slate-500">
         &copy; {currentYear} {name}. All Rights Reserved.
       </p>
     </footer>

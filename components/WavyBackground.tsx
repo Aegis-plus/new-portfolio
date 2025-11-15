@@ -1,6 +1,11 @@
 import React from 'react';
 
-const WavyBackground = () => {
+interface Props {
+  theme: 'light' | 'dark';
+}
+
+const WavyBackground: React.FC<Props> = ({ theme }) => {
+  const bg = theme === 'dark' ? '#0F172A' : '#F1F5F9'; // slate-900 vs slate-100
   return (
     <div style={{
       position: 'fixed',
@@ -10,7 +15,7 @@ const WavyBackground = () => {
       height: '100%',
       zIndex: -1,
       overflow: 'hidden',
-      backgroundColor: '#0F172A' // slate-900 (reverted)
+      backgroundColor: bg
     }}>
       <svg
         className="waves"
