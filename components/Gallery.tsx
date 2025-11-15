@@ -58,7 +58,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ piece, onClose, onNext, onP
       aria-labelledby="art-title"
     >
       <div 
-        className="relative bg-slate-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+        className="relative bg-white dark:bg-slate-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full md:w-2/3 h-64 md:h-auto flex-shrink-0 flex items-center justify-center bg-black/50">
@@ -66,8 +66,8 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ piece, onClose, onNext, onP
         </div>
 
         <div className="p-6 flex flex-col flex-grow overflow-y-auto">
-          <h2 id="art-title" className="text-2xl font-bold text-white mb-2">{piece.title}</h2>
-          <p className="text-slate-400 leading-relaxed flex-grow">{piece.description}</p>
+          <h2 id="art-title" className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{piece.title}</h2>
+          <p className="text-slate-700 dark:text-slate-400 leading-relaxed flex-grow">{piece.description}</p>
           <button 
             onClick={onClose}
             className="mt-4 self-start bg-red-600 hover:bg-red-500 text-white font-bold py-2 px-4 rounded transition-all duration-300 hover:shadow-[0_0_15px_theme(colors.red.500)]"
@@ -135,8 +135,8 @@ const Gallery: React.FC<GalleryProps> = ({ artPieces }) => {
   const selectedPiece = selectedIndex !== null ? artPieces[selectedIndex] : null;
 
   return (
-    <section id="gallery" className="bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-red-500 pl-4">My Gallery</h2>
+    <section id="gallery" className="bg-white dark:bg-slate-900 py-12 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 border-l-4 border-red-500 pl-4">My Gallery</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {artPieces.map((piece, index) => (
           <GalleryImage key={piece.id} piece={piece} onImageClick={() => openModal(index)} />
