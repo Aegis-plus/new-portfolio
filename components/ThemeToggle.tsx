@@ -9,10 +9,13 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => {
   const isDark = theme === 'dark';
   return (
     <button
+      id="theme-toggle"
+      data-testid="theme-toggle"
       onClick={onToggle}
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-pressed={isDark}
       title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="fixed top-5 right-5 z-50 p-2 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 shadow hover:shadow-md backdrop-blur border border-slate-200 dark:border-slate-700 transition-colors"
+      className="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 shadow hover:shadow-md backdrop-blur border border-slate-200 dark:border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500/50"
     >
       {isDark ? (
         // Sun icon
