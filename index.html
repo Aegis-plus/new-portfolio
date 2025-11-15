@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Profile & Art Gallery</title>
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAQJJREFUWIVjZCAS6Cnp/ydWLTK4dO8iIz55JnIMpSbA6zoGJJ/ndjYzMDAwMKSE+JJkgb6yAQMDnpAY8BBgwSWB7nMdQzmyLLh49wIDAyQk/jNgCYkBDwGMeMHlcwtlfapYiJ4mBjwEcKYBdJ/DXI4OkOIYrzwuMHhDAJfPEzdCfDTfH7uP0eVh+nGFxOANAVwA5jN0HxFKC7jA4A2BE3cvMjAQkYrRAanqB28IXDn/CIWPXhKip25CqR0XGHwhACujJ5fXotQJMEBqnQBLS+lu8Sjmw8CAhwDJLSJia0dCPoeBwR8CMIAeEpPLaxkYsOQCdPmh3yqGgWHbLxgFo2AUAACTbmxtgGIP2wAAAABJRU5ErkJggg==">
+    <script>
+      // Enable class-based dark mode for Tailwind (CDN)
+      tailwind = typeof tailwind === 'undefined' ? {} : tailwind;
+      tailwind.config = Object.assign({}, tailwind.config || {}, { darkMode: 'class' });
+
+      // Set initial theme early to avoid flash of incorrect theme
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +38,8 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/v2/assets/index-fab26d11.js"></script>
-  <link rel="stylesheet" href="/v2/assets/index-05ab632f.css">
+  <script type="module" crossorigin src="/v2/assets/index-430da4d6.js"></script>
+  <link rel="stylesheet" href="/v2/assets/index-ffda4d12.css">
 </head>
   <body class="antialiased">
     <div id="root"></div>
